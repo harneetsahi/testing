@@ -13,3 +13,15 @@ test("reverse string", () => {
 test("add", () => {
   expect(calculator.add(2, 3)).toBe(5);
 });
+
+test("subtract", () => {
+  expect(calculator.subtract(3, 2)).toBe(1);
+});
+
+test("divide", () => {
+  expect(calculator.divide(6, 2)).toBe(3);
+});
+
+test("multiply", () => {
+  expect(calculator.multiply(3, 2)).toBe(6);
+});
