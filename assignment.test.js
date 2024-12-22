@@ -3,6 +3,7 @@ const {
   reverseString,
   calculator,
   caesarCipher,
+  analyzeArray,
 } = require("./assignment");
 
 test("capitalize", () => {
@@ -41,4 +42,22 @@ test("caesarCipher", () => {
 
 test("caesarCipher", () => {
   expect(caesarCipher("Hello, World!", 3)).toBe("Khoor, Zruog!");
+});
+
+test("analyzeArray", () => {
+  expect(analyzeArray([1, 8, 3, 4, 2, 6])).toEqual({
+    average: 4,
+    min: 1,
+    max: 8,
+    length: 6,
+  });
+});
+
+test("analyzeArray", () => {
+  expect(analyzeArray([10, 12, 5, 9, 2, 16])).toEqual({
+    average: 9,
+    min: 2,
+    max: 16,
+    length: 6,
+  });
 });

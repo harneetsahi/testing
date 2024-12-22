@@ -51,4 +51,21 @@ function caesarCipher(str, shift) {
   return result;
 }
 
-module.exports = { capitalize, reverseString, calculator, caesarCipher };
+function analyzeArray(arr) {
+  let average = arr.reduce((prev, curr) => prev + curr, 0) / arr.length;
+
+  return {
+    average,
+    min: Math.min(...arr),
+    max: Math.max(...arr),
+    length: arr.length,
+  };
+}
+
+module.exports = {
+  capitalize,
+  reverseString,
+  calculator,
+  caesarCipher,
+  analyzeArray,
+};
