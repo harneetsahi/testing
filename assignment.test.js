@@ -61,3 +61,5 @@ test("analyzeArray", () => {
     length: 6,
   });
 });
+
+/////////////////// more testing (mocking)

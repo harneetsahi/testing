@@ -1,3 +1,5 @@
+const axios = require("axios");
+
 function capitalize(str) {
   return str[0].toUpperCase() + str.slice(1);
 }
@@ -62,10 +64,23 @@ function analyzeArray(arr) {
   };
 }
 
+///////// using axios for mocking
+
+const fetchData = async (id) => {
+  const results = await axios.get(
+    `https://jsonplaceholder.typicode.com/todos/${id}`
+  );
+  // console.log(results);
+  return results;
+};
+
+console.log(fetchData(1));
+
 module.exports = {
   capitalize,
   reverseString,
   calculator,
   caesarCipher,
   analyzeArray,
+  fetchData,
 };
