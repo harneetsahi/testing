@@ -24,6 +24,31 @@ const calculator = {
   },
 };
 
-function caesarCipher(str, shift) {}
+function caesarCipher(str, shift) {
+  let result = "";
 
-module.exports = { capitalize, reverseString, calculator };
+  for (let i = 0; i < str.length; i++) {
+    let charCode = str.codePointAt(i);
+
+    let capA = "A".codePointAt(0); // 65
+    let capZ = "Z".codePointAt(0); // 90
+    let smallA = "a".codePointAt(0); // 97
+    let smallZ = "z".codePointAt(0); // 122
+
+    if (charCode >= capA && charCode <= capZ) {
+      charCode -= capA; // to bring the charCode in 0-25 range
+      charCode = (charCode + (shift % 26) + 26) % 26; // modulo wraps it. +26 to turn any negatives into positives. Modulo again to wrap it within the alphabet range.
+      charCode += capA; // bring it back to their original code numbers
+    } else if (charCode >= smallA && charCode <= smallZ) {
+      charCode -= smallA;
+      charCode = (charCode + (shift % 26) + 26) % 26;
+      charCode += smallA;
+    }
+
+    result += String.fromCodePoint(charCode);
+  }
+
+  return result;
+}
+
+module.exports = { capitalize, reverseString, calculator, caesarCipher };
