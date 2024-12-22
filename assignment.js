@@ -64,17 +64,15 @@ function analyzeArray(arr) {
   };
 }
 
-///////// using axios for mocking
+///////// instead of axios like below, we use mocks (refer to the test file)
 
 const fetchData = async (id) => {
   const results = await axios.get(
     `https://jsonplaceholder.typicode.com/todos/${id}`
   );
-  // console.log(results);
-  return results;
-};
 
-console.log(fetchData(1));
+  return results.data;
+};
 
 module.exports = {
   capitalize,
